@@ -1,0 +1,54 @@
+
+<div class="form-panel">
+    <h4 class="mb"><i class="fa fa-angle-right"></i> Form Elements</h4>
+    <form name="category" class="form-horizontal style-form" method="get">
+        <div class="form-group">
+            <label class="col-sm-2 col-sm-2 control-label">Parent</label>
+            <div class="col-sm-10">
+                <select id="category_parentid" name="category[parentid]"  class="form-control">
+                    <option value="0">Main Category</option>
+                    {% for cat in categories %}
+                        <option value="{{ cat.id }}" {{ cat.id==category.parentid ? ' Selected': '' }}>{{ cat.title }}</option>
+                    {% endfor %}
+                </select>
+                <span class="help-block"></span>
+            </div>
+        </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 col-sm-2 control-label">Category Name</label>
+                <div class="col-sm-10">
+                    <input type="text" id="category_title" name="category[title]" value="{{ category.title }}"  class="form-control">
+                    <span class="help-block"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 col-sm-2 control-label">Description</label>
+                <div class="col-sm-10">
+                    <input type="text" id="category_description" name="category[description]" value="{{ category.description }}"  class="form-control">
+                    <span class="help-block"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 col-sm-2 control-label">Category Keywords</label>
+                <div class="col-sm-10">
+                    <input type="text" id="category_keywords" name="category[keywords]" value="{{ category.keywords }}"  class="form-control">
+                    <span class="help-block"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 col-sm-2 control-label">Status</label>
+                <div class="col-sm-10">
+                    <select id="category_status" name="category[status]"  class="form-control">
+                        <option>{{ category.status }} </option>
+                        <option>True</option>
+                        <option>False</option>
+                    </select>
+                    <span class="help-block"></span>
+                </div>
+            </div>
+    <button class="btn">{{ button_label|default('Save') }}</button>
+
+    </form>
+      </div>

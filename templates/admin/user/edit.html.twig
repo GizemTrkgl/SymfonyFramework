@@ -1,0 +1,27 @@
+{% extends 'adminbase.html.twig' %}
+{% block title %}Edit User{% endblock %}
+
+{% block body %}
+<section id="main-content">
+    <section class="wrapper site-min-height">
+        <div class="row mt">
+
+            <div class="col-lg-12">
+
+                {{ include('admin/user/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin_user_index') }}">back to list</a>
+
+                <div class="col-sm-3m">
+    {{ include('admin/user/_delete_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /wrapper -->
+</section>
+    <!-- /MAIN CONTENT -->
+
+{% endblock %}
+
+
